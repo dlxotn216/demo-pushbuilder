@@ -20,6 +20,11 @@ public class IndexController {
 
     @GetMapping("")
     public String getIndexPage(Model model) {
+        try {
+            Thread.sleep(2000L);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         model.addAttribute("name", "Lee");
         model.addAttribute("message", "Hello Spring5");
         return "index";
@@ -38,6 +43,11 @@ public class IndexController {
         pushBuilder.path("webjars/jquery-ui/1.12.1/jquery-ui.js").push();
         pushBuilder.path("webjars/validate.js/0.12.0/validate.js").push();
         pushBuilder.path("webjars/requirejs/2.3.6/require.js").push();
+        try {
+            Thread.sleep(2000L);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return "push-index";
     }
 }
